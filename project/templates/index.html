@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+    Authentication
+</h1>
+<div class="column is-4 is-offset-4">
+  <div class="box">
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+          <div class="notification is-danger">
+              {{ messages[0] }}
+          </div>
+      {% endif %}
+      {% endwith %}
+      <div class="field">
+          <div class="control">
+              <form method="GET" action="/login">
+                  <button class="button is-block is-info is-large is-fullwidth">Login</button>
+              </form>
+          </div>
+      </div>
+      
+      <div class="field">
+          <div class="control">
+              <form method="GET" action="/signup">
+                  <button class="button is-block is-info is-large is-fullwidth">Sign Up</button>
+              </form>
+          </div>
+      </div>
+         
+  </div>
+</div>
+{% endblock %}
+

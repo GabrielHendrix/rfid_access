@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  rfid_access:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /home/nove/Documents/rfid_access:/rfid_access
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    network_mode: "host"
